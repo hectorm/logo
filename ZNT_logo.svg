@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="no"?>
+<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" version="1.1">
+	<title>ZNT logo</title>
+	<g>
+		<!-- Lines -->
+		<rect x="32" y="364" width="960" height="40" fill="#263238" />
+		<rect x="32" y="620" width="960" height="40" fill="#263238" />
+		<!-- Z -->
+		<rect x="172" y="320" width="40" height="384" fill="#263238" transform="rotate(50.035 192 512)" />
+		<!-- N -->
+		<rect x="352" y="384" width="40" height="256" fill="#263238" />
+		<rect x="632" y="384" width="40" height="256" fill="#263238" />
+		<rect x="492" y="344" width="40" height="336" fill="#263238" transform="rotate(-45 512 512)" />
+		<!-- T -->
+		<rect x="812" y="384" width="40" height="256" fill="#263238" />
+	</g>
+</svg>
+
