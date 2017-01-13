@@ -1,12 +1,12 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="512px" height="512px" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	<title>ZNT favicon</title>
+
 	<g>
-		<!-- Lines -->
-		<rect x="32" y="32" width="960" height="128" fill="#263238" />
-		<rect x="32" y="864" width="960" height="128" fill="#263238" />
-		<!-- Z -->
-		<rect x="448" y="-79.79" width="128" height="1183.58" fill="#263238" transform="rotate(47.574 512 512)" />
+		<line x1="032.00px" y1="096.00px" x2="992.00px" y2="096.00px" stroke="#263238" stroke-width="128px" />
+		<line x1="075.18px" y1="911.24px" x2="948.82px" y2="112.76px" stroke="#263238" stroke-width="128px" />
+		<line x1="032.00px" y1="928.00px" x2="992.00px" y2="928.00px" stroke="#263238" stroke-width="128px" />
 	</g>
 </svg>
+
 

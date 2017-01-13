@@ -1,7 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-# Author:   Héctor Molinero Fernández <hector@molinero.xyz>
-# License:  MIT, https://opensource.org/licenses/MIT
+# Author:     Héctor Molinero Fernández <hector@molinero.xyz>
+# Repository: https://github.com/zant95/logo
+# License:    MIT, https://opensource.org/licenses/MIT
 
 # Exit on errors
 set -eu
@@ -28,8 +29,8 @@ inkscape $logoArgs    $backgroundArgs -w 2048 -h 2048 -e "$buildDir"/ZNT_x2048_l
 inkscape $logoArgs                    -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo.png
 inkscape $logoArgs    $backgroundArgs -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo_background.png
 
-inkscape $logoArgs                    -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo_moremargin.png            -a '-96:-96:1120:1120'
-inkscape $logoArgs    $backgroundArgs -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo_moremargin_background.png -a '-96:-96:1120:1120'
+inkscape $logoArgs                    -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo_moremargin.png            -a '-48:-48:560:560'
+inkscape $logoArgs    $backgroundArgs -w 1024 -h 1024 -e "$buildDir"/ZNT_x1024_logo_moremargin_background.png -a '-48:-48:560:560'
 
 inkscape $logoArgs                    -w 512  -h 512  -e "$buildDir"/ZNT_x512_logo.png
 inkscape $logoArgs    $backgroundArgs -w 512  -h 512  -e "$buildDir"/ZNT_x512_logo_background.png

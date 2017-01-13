@@ -1,18 +1,66 @@
 <?xml version="1.0" standalone="no"?>
-<svg width="1024" height="1024" xmlns="http://www.w3.org/2000/svg" version="1.1">
+<svg width="512px" height="512px" viewBox="0 0 1024 1024" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" version="1.1">
 	<title>ZNT logo</title>
-	<g>
-		<!-- Lines -->
-		<rect x="32" y="364" width="960" height="40" fill="#263238" />
-		<rect x="32" y="620" width="960" height="40" fill="#263238" />
-		<!-- Z -->
-		<rect x="172" y="320" width="40" height="384" fill="#263238" transform="rotate(50.035 192 512)" />
-		<!-- N -->
-		<rect x="352" y="384" width="40" height="256" fill="#263238" />
-		<rect x="632" y="384" width="40" height="256" fill="#263238" />
-		<rect x="492" y="344" width="40" height="336" fill="#263238" transform="rotate(-45 512 512)" />
-		<!-- T -->
-		<rect x="812" y="384" width="40" height="256" fill="#263238" />
+
+	<g class="g0">
+		<line class="l0" x1="032.00px" y1="384.00px" x2="992.00px" y2="384.00px" stroke="#263238" stroke-width="40px" />
+		<line class="l1" x1="032.00px" y1="640.00px" x2="992.00px" y2="640.00px" stroke="#263238" stroke-width="40px" />
+		<line class="Z0" x1="044.85px" y1="635.33px" x2="339.15px" y2="388.66px" stroke="#263238" stroke-width="40px" />
+		<line class="N0" x1="372.00px" y1="640.00px" x2="372.00px" y2="384.00px" stroke="#263238" stroke-width="40px" />
+		<line class="N1" x1="364.85px" y1="388.66px" x2="659.15px" y2="635.33px" stroke="#263238" stroke-width="40px" />
+		<line class="N2" x1="652.00px" y1="640.00px" x2="652.00px" y2="384.00px" stroke="#263238" stroke-width="40px" />
+		<line class="T0" x1="832.00px" y1="640.00px" x2="832.00px" y2="384.00px" stroke="#263238" stroke-width="40px" />
 	</g>
+
+	<style>
+		@keyframes fadeIn {
+			0%   {opacity: 0;}
+			100% {opacity: 1;}
+		}
+
+		@keyframes fromTop {
+			0%   {transform: translate(0, -1536px);}
+			100% {transform: translate(0, 0);}
+		}
+
+		@keyframes fromRight {
+			0%   {transform: translate(-1536px, 0);}
+			100% {transform: translate(0, 0);}
+		}
+
+		@keyframes fromBottom {
+			0%   {transform: translate(0, 1536px);}
+			100% {transform: translate(0, 0);}
+		}
+
+		@keyframes fromLeft {
+			0%   {transform: translate(1536px, 0);}
+			100% {transform: translate(0, 0);}
+		}
+
+		@keyframes fromTopRight {
+			0%   {transform: translate(-1536px, -1536px);}
+			100% {transform: translate(0, 0);}
+		}
+
+		@keyframes fromBottomRight {
+			0%   {transform: translate(-1536px, 1536px);}
+			100% {transform: translate(0, 0);}
+		}
+
+		.g0 {animation: fadeIn          0.5s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.l0 {animation: fromRight       0.8s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.l1 {animation: fromLeft        0.8s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.Z0 {animation: fromBottomRight 0.6s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.N0 {animation: fromBottom      0.7s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.N1 {animation: fromTopRight    0.8s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.N2 {animation: fromTop         0.9s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+		.T0 {animation: fromBottom      1.0s cubic-bezier(0.000, 0.000, 0.128, 1.280);}
+
+		.g0, .l0, .l1, .Z0, .N0, .N1, .N2, .T0 {
+			animation-fill-mode: forwards;
+		}
+	</style>
 </svg>
+
 
