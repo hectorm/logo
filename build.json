@@ -1,0 +1,13 @@
+{"vectors": [{
+	"name": "logo",
+	"file": "vector/logo.svg",
+	"sizes": [4096, 2048, 1024, 512, 460, 256],
+	"background": "#FFFFFF",
+	"margin": "-48:-48:560:560"
+}, {
+	"name": "favicon",
+	"file": "vector/favicon.svg",
+	"sizes": [192, 62, 48, 32, 16],
+	"background": "#FFFFFF"
+}]}
+
