@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Author:     Héctor Molinero Fernández <hector@molinero.xyz>
-# Repository: https://github.com/zant95/logo
+# Repository: https://github.com/hectorm/logo
 
 # Exit on errors
 set -eu
