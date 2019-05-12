@@ -1,54 +1,51 @@
 #!/bin/sh
 
-# Author:     Héctor Molinero Fernández <hector@molinero.xyz>
+# Author:     Héctor Molinero Fernández <hector@molinero.dev>
 # Repository: https://github.com/hectorm/logo
 
-# Exit on errors
 set -eu
 
-# Globals
-scriptDir=$(dirname "$(readlink -f "$0")")
-buildDir="$scriptDir/bitmap"
+SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
+TARGET_DIR="${SCRIPT_DIR}/bitmap"
 
-# Process:
 main() {
-	cd "$scriptDir"
-	rm -rf "$buildDir"
-	mkdir "$buildDir"
+	rm -rf "${TARGET_DIR}"
+	mkdir -p "${TARGET_DIR}"
 
-	for i in $(seq 0 "$(jq '.vectors|length-1' build.json)"); do
-		name=$(jq -r ".vectors[$i].name" build.json)
-		file=$(jq -r ".vectors[$i].file" build.json)
-		background=$(jq -r ".vectors[$i].background" build.json)
-		margin=$(jq -r ".vectors[$i].margin" build.json)
+	for i in $(seq 0 "$(jq '.vectors|length-1' "${SCRIPT_DIR}/build.json")"); do
+		name=$(jq       -r --arg i "${i}" '.vectors[$i|tonumber].name' "${SCRIPT_DIR}/build.json")
+		file=$(jq       -r --arg i "${i}" '.vectors[$i|tonumber].file' "${SCRIPT_DIR}/build.json")
+		background=$(jq -r --arg i "${i}" '.vectors[$i|tonumber].background' "${SCRIPT_DIR}/build.json")
+		margin=$(jq     -r --arg i "${i}" '.vectors[$i|tonumber].margin' "${SCRIPT_DIR}/build.json")
+		totalSizes=$(jq -r --arg i "${i}" '.vectors[$i|tonumber].sizes|length-1' "${SCRIPT_DIR}/build.json")
 
-		for j in $(seq 0 "$(jq ".vectors[$i].sizes|length-1" build.json)"); do
-			size=$(jq ".vectors[$i].sizes[$j]" build.json)
-
-			inkscape --without-gui \
-				-w "$size" -h "$size" \
-				-e "$buildDir/${name}_x${size}.png" \
-				"$file"
+		for j in $(seq 0 "${totalSizes}"); do
+			size=$(jq -r --arg i "${i}" --arg j "${j}" '.vectors[$i|tonumber].sizes[$j|tonumber]' "${SCRIPT_DIR}/build.json")
 
 			inkscape --without-gui \
-				-w "$size" -h "$size" \
-				-b "$background" \
-				-e "$buildDir/${name}_background_x${size}.png" \
-				"$file"
+				-w "${size}" -h "${size}" \
+				-e "${TARGET_DIR}/${name}_x${size}.png" \
+				"${SCRIPT_DIR}/${file}"
 
-			if [ "$margin" != "null" ]; then
+			inkscape --without-gui \
+				-w "${size}" -h "${size}" \
+				-b "${background}" \
+				-e "${TARGET_DIR}/${name}_background_x${size}.png" \
+				"${SCRIPT_DIR}/${file}"
+
+			if [ "${margin}" != 'null' ]; then
 				inkscape --without-gui \
-					-w "$size" -h "$size" \
-					-a "$margin" \
-					-e "$buildDir/${name}_margin_x${size}.png" \
-					"$file"
+					-w "${size}" -h "${size}" \
+					-a "${margin}" \
+					-e "${TARGET_DIR}/${name}_margin_x${size}.png" \
+					"${SCRIPT_DIR}/${file}"
 
 				inkscape --without-gui \
-					-w "$size" -h "$size" \
-					-b "$background" \
-					-a "$margin" \
-					-e "$buildDir/${name}_background_margin_x${size}.png" \
-					"$file"
+					-w "${size}" -h "${size}" \
+					-b "${background}" \
+					-a "${margin}" \
+					-e "${TARGET_DIR}/${name}_background_margin_x${size}.png" \
+					"${SCRIPT_DIR}/${file}"
 			fi
 		done
 	done
