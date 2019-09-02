@@ -6,7 +6,7 @@
 set -eu
 
 SCRIPT_DIR=$(dirname "$(readlink -f "$0")")
-TARGET_DIR="${SCRIPT_DIR}/bitmap"
+TARGET_DIR=${SCRIPT_DIR}/bitmap
 
 main() {
 	rm -rf "${TARGET_DIR}"
@@ -52,4 +52,3 @@ main() {
 }
 
 main
-
