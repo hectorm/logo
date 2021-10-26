@@ -12,6 +12,11 @@
 		<line class="l a T0" x1="832.00px" y1="640.00px" x2="832.00px" y2="384.00px" stroke="#263238" stroke-width="40px" />
 	</g>
 	<style type="text/css">
+		@media (max-width: 32px) {
+			.g0 {
+				transform: translate(-32px, -32px) scale(1.0625);
+			}
+		}
 		@media (prefers-color-scheme: dark) {
 			.l {
 				stroke: #E5E9F0 !important;
